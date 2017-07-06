@@ -1,4 +1,4 @@
-package com.wzf.face.landmarks2;
+package com.wzf.face.landmarks2.Activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -7,7 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+
+import com.wzf.face.landmarks2.R;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -104,6 +105,10 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         saveImage(mRGBA);
         Intent intent=new Intent(this,DetailActivity.class);
         startActivity(intent);
+    }
+
+    public void click_toLoad(View view){
+        startActivity(new Intent(MainActivity.this,LoadActivity.class));
     }
 
     public void saveImage(Mat subImg){

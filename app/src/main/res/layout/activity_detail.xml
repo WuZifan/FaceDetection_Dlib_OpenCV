@@ -1,15 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ImageView
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_detail"
         android:id="@+id/iv_detail"/>
 
-    <Button
-        android:text="来吧！"
-        android:layout_width="wrap_content"
+    <com.wzf.face.landmarks2.View.GPSView
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_detail" />
-</LinearLayout>
+        android:layout_above="@+id/ll_detail"
+        android:id="@+id/GPS_detail"
+        android:layout_centerVertical="true"
+        />
+
+    <LinearLayout
+
+        android:id="@+id/ll_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:text="原生检测"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_BaseDetec"
+            android:layout_weight="1"
+            android:id="@+id/btn_BaseDetec" />
+
+        <Button
+            android:text="GPS检测"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_PlayServiceDetec"
+            android:layout_weight="1"
+            android:id="@+id/btn_PlayServiceDetec" />
+
+        <Button
+            android:text="Dlib检测"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_detail"
+            android:layout_weight="1"
+            android:id="@+id/btn_detail" />
+
+        <Button
+            android:text="五官坐标"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click_getLocation"
+            android:layout_weight="1"
+            android:id="@+id/btn_getDetail" />
+
+    </LinearLayout>
+
+</RelativeLayout>

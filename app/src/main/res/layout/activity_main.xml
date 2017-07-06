@@ -4,20 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wzf.face.landmarks2.MainActivity">
+    tools:context="com.wzf.face.landmarks2.Activity.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/ll_main"
+        >
 
-    <Button
-        android:layout_below="@+id/javaCVLMD"
-        android:onClick="click1"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="按钮1"
-        />
+        <Button
+            android:id="@+id/btn_main"
+            android:onClick="click1"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="按钮1"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="去Load"
+            android:onClick="click_toLoad"
+            />
+
+    </LinearLayout>
 
     <org.opencv.android.JavaCameraView
+        android:layout_below="@+id/ll_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/javaCVLMD"/>
